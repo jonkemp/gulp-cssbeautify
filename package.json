@@ -2,6 +2,8 @@
   "name": "gulp-cssbeautify",
   "version": "0.1.0",
   "description": "Reindent and reformat CSS",
+  "license": "MIT",
+  "repository": "jonkemp/gulp-cssbeautify",
   "author": {
     "name": "Jonathan Kemp",
     "email": "kempdogg@gmail.com",
@@ -17,7 +19,10 @@
     "index.js"
   ],
   "keywords": [
-    "gulpplugin"
+    "gulpplugin",
+    "cssbeautify",
+    "css",
+    "formatter"
   ],
   "dependencies": {
     "map-stream": "0.0.4",
