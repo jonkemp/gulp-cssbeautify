@@ -1,0 +1,31 @@
+{
+  "name": "gulp-cssbeautify",
+  "version": "0.1.0",
+  "description": "Reindent and reformat CSS",
+  "author": {
+    "name": "Jonathan Kemp",
+    "email": "kempdogg@gmail.com",
+    "url": "http://jonkemp.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "map-stream": "0.0.4",
+    "gulp-util": "~2.2.13",
+    "cssbeautify": "~0.3.1"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
+}
