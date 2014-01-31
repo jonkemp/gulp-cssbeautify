@@ -4,6 +4,10 @@ var cssbeautify = require('cssbeautify');
 
 module.exports = function(opt){
     return map(function (file, cb){
+        if (!opt) {
+            opt = {};
+        }
+
         if (file.isNull()) {
             return cb(null, file);
         }
