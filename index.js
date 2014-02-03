@@ -1,23 +1,31 @@
-var map = require('map-stream');
 var gutil = require('gulp-util');
+var through = require('through2');
 var cssbeautify = require('cssbeautify');
 
 module.exports = function(opt){
-    return map(function (file, cb){
+    return through.obj(function (file, enc, cb) {
         if (!opt) {
             opt = {};
         }
 
         if (file.isNull()) {
-            return cb(null, file);
+            this.push(file);
+            return cb();
         }
 
         if (file.isStream()) {
-            return cb(new Error('gulp-cssbeautify: Streaming not supported'));
+            this.emit('error', new gutil.PluginError('gulp-cssbeautify', 'Streaming not supported'));
+            return cb();
         }
 
-        file.contents = new Buffer(cssbeautify(file.contents.toString(), opt));
+        try {
+            file.contents = new Buffer(cssbeautify(file.contents.toString(), opt));
+        } catch (err) {
+            this.emit('error', new gutil.PluginError('gulp-cssbeautify', err));
+        }
 
-        cb(null, file);
+        this.push(file);
+
+        cb();
     });
 };
