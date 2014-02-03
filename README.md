@@ -52,16 +52,16 @@ gulp.task('css', function() {
 
 #### options.indent
 
-Type: `String`
-Default: `    `
+Type: `String`  
+Default: `'    '`
 
 The indentation to use.
 
 
 #### options.openbrace
 
-Type: `String`
-Default: `end-of-line`
+Type: `String`  
+Default: `end-of-line`  
 Values: `end-of-line`, `separate-line`
 
 Defines the placement of open curly brace.
@@ -69,7 +69,7 @@ Defines the placement of open curly brace.
 
 #### options.autosemicolon
 
-Type: `Boolean`
+Type: `Boolean`  
 Default: `false`
 
 Always inserts a semicolon after the last ruleset.
