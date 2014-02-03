@@ -45,15 +45,34 @@ gulp.task('css', function() {
 ```
 
 
-## Options
+## API
 
-You can pass an optional object to adjust the formatting. Options are:
+### cssbeautify(options)
 
-  *  <code>indent</code> is a string used for the indentation of the declaration (default is 4 spaces)
-  *  <code>openbrace</code> defines the placement of open curly brace, either *end-of-line* (default) or *separate-line*.
-  *  <code>autosemicolon</code> always inserts a semicolon after the last ruleset (default is *false*)
 
-The options object is passed directly to [cssbeautify](https://github.com/senchalabs/cssbeautify).
+#### options.indent
+
+Type: `String`
+Default: `    `
+
+The indentation to use.
+
+
+#### options.openbrace
+
+Type: `String`
+Default: `end-of-line`
+Values: `end-of-line`, `separate-line`
+
+Defines the placement of open curly brace.
+
+
+#### options.autosemicolon
+
+Type: `Boolean`
+Default: `false`
+
+Always inserts a semicolon after the last ruleset.
 
 
 ## License
