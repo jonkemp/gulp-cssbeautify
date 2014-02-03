@@ -53,9 +53,9 @@ gulp.task('css', function() {
 #### options.indent
 
 Type: `String`  
-Default: `'    '`
+Default: 4
 
-The indentation to use.
+The number of spaces to use for indentation.
 
 
 #### options.openbrace
