@@ -38,7 +38,7 @@ var gulp = require('gulp'),
     cssbeautify = require('gulp-cssbeautify');
 
 gulp.task('css', function() {
-    gulp.src('./styles/*.css')
+    return gulp.src('./styles/*.css')
         .pipe(cssbeautify())
         .pipe(gulp.dest('./styles/'));;
 });
