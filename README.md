@@ -44,6 +44,23 @@ gulp.task('css', function() {
 });
 ```
 
+With options:
+
+```js
+var gulp = require('gulp'),
+    cssbeautify = require('gulp-cssbeautify');
+
+gulp.task('css', function() {
+    return gulp.src('./styles/*.css')
+        .pipe(cssbeautify({
+            indent: '  ',
+            openbrace: 'separate-line',
+            autosemicolon: true
+        }))
+        .pipe(gulp.dest('./styles/'));;
+});
+```
+
 
 ## API
 
@@ -53,7 +70,9 @@ gulp.task('css', function() {
 #### options.indent
 
 Type: `String`  
-Default: 4
+```js
+Default: '    '
+```
 
 The number of spaces to use for indentation.
 
