@@ -70,12 +70,9 @@ gulp.task('css', function() {
 #### options.indent
 
 Type: `String`  
-Default:  
-```js
-'    '
-```
+Default: <code>'&nbsp;&nbsp;&nbsp;&nbsp;'</code>  
 
-The number of spaces to use for indentation.
+Spaces to use for indentation.
 
 
 #### options.openbrace
