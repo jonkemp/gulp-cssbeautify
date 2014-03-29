@@ -30,11 +30,11 @@
     "cssbeautify": "~0.3.1"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*",
-    "gulp-util": "~2.2.14",
     "gulp": "~3.5.1",
+    "gulp-jshint": "^1.5.1",
     "gulp-mocha": "~0.4.1",
-    "gulp-jshint": "~1.3.4"
+    "gulp-util": "~2.2.14",
+    "mocha": "*",
+    "should": "*"
   }
 }
