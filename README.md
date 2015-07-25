@@ -6,17 +6,17 @@
 Given the following style:
 
 ```css
-menu{color:red} navigation{background-color:#333}
+.menu{color:red} .navigation{background-color:#333}
 ```
 
 CSS Beautify will produce:
 
 ```css
-menu {
+.menu {
     color: red
 }
 
-navigation {
+.navigation {
     background-color: #333
 }
 ```
