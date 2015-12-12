@@ -1,4 +1,4 @@
-/* jshint node: true */
+/* eslint-disable */
 /* global describe, it */
 
 var should = require('should');
