@@ -8,9 +8,14 @@ module.exports = function (options) {
     return through.obj(function (file, enc, cb) {
         var opt = options || {};
 
+        if (file.isNull()) {
+            cb(null, file);
+            return;
+        }
+
         if (file.isStream()) {
-            this.emit('error', new gutil.PluginError('gulp-cssbeautify', 'Streaming not supported'));
-            return cb();
+            cb(new gutil.PluginError('gulp-cssbeautify', 'Streaming not supported'));
+            return;
         }
 
         try {

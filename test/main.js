@@ -2,7 +2,10 @@
 /* global describe, it */
 
 var should = require('should');
+var path = require('path');
+var gulp = require('gulp');
 var gutil = require('gulp-util');
+var es = require('event-stream');
 var beautify = require('../index');
 var cssbeautify = require('cssbeautify');
 
@@ -16,7 +19,9 @@ function compare(input, options, done) {
     });
 
     var expected = cssbeautify(String(fakeFile.contents), options);
+
     stream.on('error', done);
+
     stream.on('data', function(newFile){
         should.exist(newFile);
         should.exist(newFile.path);
@@ -28,10 +33,41 @@ function compare(input, options, done) {
         String(newFile.contents).should.equal(expected);
         done();
     });
+
     stream.write(fakeFile);
 }
 
 describe('gulp-cssbeautify', function() {
+    it('should let null files pass through', function(done) {
+        var stream = beautify(),
+            n = 0;
+
+        stream.pipe(es.through(function(file) {
+            should.equal(file.path, 'null.md');
+            should.equal(file.contents,  null);
+            n++;
+        }, function() {
+            should.equal(n, 1);
+            done();
+        }));
+
+        stream.write(new gutil.File({
+            path: 'null.md',
+            contents: null
+         }));
+
+        stream.end();
+    });
+
+    it('should emit error on streamed file', function (done) {
+        gulp.src(path.join('test', 'file.css'), { buffer: false })
+            .pipe(beautify())
+            .on('error', function (err) {
+                err.message.should.equal('Streaming not supported');
+                done();
+            });
+    });
+
     it('Should handle simple style', function(done) {
         var input = [
             'menu { color: blue; }',
