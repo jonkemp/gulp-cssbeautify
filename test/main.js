@@ -116,6 +116,30 @@ describe('gulp-cssbeautify', function() {
         compare(input, options, done);
     });
 
+    it('Should handle indentation with spaces', function(done) {
+        var input = [
+            '     navigation {',
+            '    color: blue',
+            '  }'
+        ];
+        var options = {
+            indent: '  ',
+        };
+        compare(input, options, done);
+    });
+
+    it('Should handle indentation with tabs', function(done) {
+        var input = [
+            '     navigation {',
+            '    color: blue',
+            '  }'
+        ];
+        var options = {
+            indent: '\t',
+        };
+        compare(input, options, done);
+    });
+
     it('Should handle blank lines and spaces', function(done) {
         var input = [
             '/* only one blank line between */',
