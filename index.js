@@ -1,11 +1,12 @@
 'use strict';
-var gutil = require('gulp-util');
-var through = require('through2');
-var cssbeautify = require('cssbeautify');
 
-module.exports = function(opt){
+var gutil = require('gulp-util'),
+    through = require('through2'),
+    cssbeautify = require('cssbeautify');
+
+module.exports = function (options) {
     return through.obj(function (file, enc, cb) {
-        opt = opt || {};
+        var opt = options || {};
 
         if (file.isStream()) {
             this.emit('error', new gutil.PluginError('gulp-cssbeautify', 'Streaming not supported'));
