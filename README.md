@@ -40,7 +40,7 @@ var gulp = require('gulp'),
 gulp.task('css', function() {
     return gulp.src('./styles/*.css')
         .pipe(cssbeautify())
-        .pipe(gulp.dest('./styles/'));;
+        .pipe(gulp.dest('./styles/'));
 });
 ```
 
@@ -57,7 +57,7 @@ gulp.task('css', function() {
             openbrace: 'separate-line',
             autosemicolon: true
         }))
-        .pipe(gulp.dest('./styles/'));;
+        .pipe(gulp.dest('./styles/'));
 });
 ```
 
