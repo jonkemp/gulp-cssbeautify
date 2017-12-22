@@ -1,6 +1,6 @@
 'use strict';
 
-var gutil = require('gulp-util'),
+var PluginError = require('plugin-error'),
     through = require('through2'),
     cssbeautify = require('cssbeautify');
 
@@ -14,14 +14,14 @@ module.exports = function (options) {
         }
 
         if (file.isStream()) {
-            cb(new gutil.PluginError('gulp-cssbeautify', 'Streaming not supported'));
+            cb(new PluginError('gulp-cssbeautify', 'Streaming not supported'));
             return;
         }
 
         try {
             file.contents = new Buffer(cssbeautify(file.contents.toString(), opt));
         } catch (err) {
-            this.emit('error', new gutil.PluginError('gulp-cssbeautify', err));
+            this.emit('error', new PluginError('gulp-cssbeautify', err));
         }
 
         this.push(file);

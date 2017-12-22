@@ -4,17 +4,17 @@
 var should = require('should');
 var path = require('path');
 var gulp = require('gulp');
-var gutil = require('gulp-util');
+var Vinyl = require('vinyl');
 var es = require('event-stream');
 var beautify = require('../index');
 var cssbeautify = require('cssbeautify');
 
 function compare(input, options, done) {
     var stream = beautify(options);
-    var fakeFile = new gutil.File({
-        path: './test/fixture/file.css',
-        cwd: './test/',
-        base: './test/fixture/',
+    var fakeFile = new Vinyl({
+        path: '/test/fixture/file.css',
+        cwd: '/test/',
+        base: '/test/fixture/',
         contents: new Buffer(input.join('\n'))
     });
 
@@ -28,7 +28,7 @@ function compare(input, options, done) {
         should.exist(newFile.relative);
         should.exist(newFile.contents);
 
-        newFile.path.should.equal('./test/fixture/file.css');
+        newFile.path.should.equal('/test/fixture/file.css');
         newFile.relative.should.equal('file.css');
         String(newFile.contents).should.equal(expected);
         done();
@@ -51,7 +51,7 @@ describe('gulp-cssbeautify', function() {
             done();
         }));
 
-        stream.write(new gutil.File({
+        stream.write(new Vinyl({
             path: 'null.md',
             contents: null
          }));
