@@ -1,6 +1,6 @@
 {
   "name": "gulp-cssbeautify",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Reindent and reformat CSS",
   "main": "index.js",
   "directories": {
