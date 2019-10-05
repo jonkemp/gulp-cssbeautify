@@ -15,7 +15,7 @@ function compare(input, options, done) {
         path: '/test/fixture/file.css',
         cwd: '/test/',
         base: '/test/fixture/',
-        contents: new Buffer(input.join('\n'))
+        contents: Buffer.from(input.join('\n'))
     });
 
     var expected = cssbeautify(String(fakeFile.contents), options);
