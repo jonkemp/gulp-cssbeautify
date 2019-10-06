@@ -19,7 +19,7 @@ module.exports = function (options) {
         }
 
         try {
-            file.contents = new Buffer(cssbeautify(file.contents.toString(), opt));
+            file.contents = Buffer.from(cssbeautify(file.contents.toString(), opt));
         } catch (err) {
             this.emit('error', new PluginError('gulp-cssbeautify', err));
         }
