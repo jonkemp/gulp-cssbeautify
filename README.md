@@ -1,4 +1,4 @@
-# [gulp](https://github.com/wearefractal/gulp)-cssbeautify [![Build Status](https://travis-ci.org/jonkemp/gulp-cssbeautify.svg?branch=master)](https://travis-ci.org/jonkemp/gulp-cssbeautify) [![Coverage Status](https://coveralls.io/repos/jonkemp/gulp-cssbeautify/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonkemp/gulp-cssbeautify?branch=master)
+# [gulp](https://github.com/wearefractal/gulp)-cssbeautify ![Build Status](https://github.com/jonkemp/gulp-cssbeautify/actions/workflows/main.yml/badge.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/jonkemp/gulp-cssbeautify/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonkemp/gulp-cssbeautify?branch=master)
 
 > [CSS Beautify](https://github.com/senchalabs/cssbeautify) automatically formats your style to be consistent and easy to read
 
